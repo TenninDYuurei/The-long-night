@@ -44,10 +44,12 @@ header
     align-items: center;
     justify-content: center;
     background: $grey-color;
+    max-height: 100px;
     img 
     {
         height: 100%;
         padding: 10px;
+        max-height: 100px;
     }
 }
 
@@ -78,6 +80,8 @@ main
     height: 300px;
     overflow: hidden;
     border-radius: 50%;
+    display: grid;
+    place-items: center;
     img
     {
         width: 300px;
@@ -99,6 +103,7 @@ h2
 .slider-sect
 {
     @include row-center();
+    box-shadow: 0 0 15px 15px $grey-color;
 }
 .arrow
 {
@@ -116,6 +121,11 @@ h2
     height: 400px;
     overflow: hidden;
 }
+.slide
+{
+    position: relative;
+    animation: slideshow 25s linear infinite;
+}
 .images
 {
     display: flex;
@@ -127,6 +137,39 @@ h2
         padding: 0 10px;
     }
 }
+
+
+@keyframes slideshow {
+    0%{
+        right:0;
+    }
+    
+    20%{
+        right:300px;
+    }
+    25%{
+        right:300px;
+    }
+    40%{
+        right:600px;
+    }
+    45%{
+        right:600px;
+    }
+    60%{
+        right:900px;
+    }
+    65%{
+        right:900px;
+    }
+    80%{
+        right:0;
+    }
+    85%{
+        right:0;
+    }
+}
+
 
 
 
@@ -178,6 +221,7 @@ h2
     @include column-center();
     gap: .5rem;
     padding: 20px;
+    min-width: 300px;
     label
     {
         display: inline-block;
@@ -194,6 +238,7 @@ h2
 {
     @include column-center();
     width: 90%;
+    gap: 1rem;
     h2
     {
         text-decoration: underline;
@@ -225,6 +270,12 @@ footer
     display: grid;
     place-items: center;
     font-size: 1.5rem;
+    max-height: 100px;
+    .contact-me
+    {
+        display: grid;
+        place-items: center;
+    }
     .links
     {
         @include row-center();
@@ -232,6 +283,155 @@ footer
         a 
         {
             color: $white-color;
+        }
+    }
+}
+
+//MEDIA QUERIES START HERE
+
+@media(max-width:1050px){
+    h1{
+        font-size: 2rem;
+    }
+}
+@media(max-width:950px){
+    h1{
+        font-size: 1.5rem;
+    }
+    .about-book
+    {
+        p 
+        {
+            font-size: 1rem;
+        }
+    }
+    .about-author
+    {
+        .about-author-sect
+        {
+            p 
+            {
+                font-size: 1rem;
+            }
+        }
+    }
+    .my-img
+    {
+        width: 200px;
+        height: 200px;
+        img
+        {
+            width: 200px;
+            height: 200px;
+
+        }
+    }
+}
+@media (max-width:850px) {
+
+    .hero-section
+    {
+        height: 60vh;
+        max-height: 450px;
+        gap: 10%;
+        padding: 0 5%;
+    }
+    .slider-img
+    {
+    width: 200px;
+    height: 270px;
+    }
+    .images
+    {
+    img
+    {
+        width: 200px;
+        height: 270px;
+    }
+    }
+    h2 
+    {
+        font-size: 1rem;
+    }
+    // .cta-btn
+    // {
+    //     // font-weight: normal;
+    // }
+    .available
+    {
+        padding: 10px;
+        .available-cta
+        {
+            gap: 1rem;
+        }
+    }
+    @keyframes slideshow {
+    0%{
+        right:0;
+    }
+    
+    20%{
+        right:200px;
+    }
+    25%{
+        right:200px;
+    }
+    40%{
+        right:400px;
+    }
+    45%{
+        right:400px;
+    }
+    60%{
+        right:600px;
+    }
+    65%{
+        right:600px;
+    }
+    80%{
+        right:0;
+    }
+    85%{
+        right:0;
+    }
+    }
+    footer
+    {
+        font-size: 1rem;
+    }
+}
+
+@media (max-width:600px) {
+    .hero-section
+    {
+        @include column-center();
+        flex-direction: column-reverse;
+        // align-items: flex-start;
+        height: 100vh;
+        max-height: 500px;
+        width: 90%;
+        max-width: 400px;
+        min-width: 300px;
+        gap: 2rem;
+    }
+    .about-book
+    {
+        width:80%;
+        min-width: 300px;
+    }
+    .about-author
+    {
+        min-width: 300px;
+        gap: 1rem;
+        .about-author-sect
+        {
+            width:100%;
+            @include column-center();
+            flex-direction: column-reverse;
+            div:first-child
+            {
+                width:100%;
+            }
         }
     }
 }
