@@ -335,6 +335,9 @@ footer .links a {
   }
 }
 @media (max-width: 600px) {
+  p {
+    text-align: center;
+  }
   .hero-section {
     display: flex;
     flex-direction: column;
@@ -345,18 +348,32 @@ footer .links a {
     max-height: 500px;
     width: 90%;
     max-width: 400px;
-    min-width: 300px;
+    min-width: 280px;
     gap: 2rem;
   }
   .about-book {
     width: 80%;
-    min-width: 300px;
+    min-width: 280px;
+  }
+  .available {
+    height: 200px;
+    width: 80%;
+  }
+  .available .available-cta {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+  }
+  .available .available-cta label {
+    max-width: 70%;
+    text-align: center;
   }
   .available .available-cta .cta-btn {
     text-align: center;
   }
   .about-author {
-    min-width: 300px;
+    min-width: 280px;
     gap: 1rem;
   }
   .about-author .about-author-sect {
@@ -365,6 +382,7 @@ footer .links a {
     flex-direction: column;
     align-items: center;
     justify-content: center;
+    gap: 1rem;
     flex-direction: column-reverse;
   }
   .about-author .about-author-sect div:first-child {

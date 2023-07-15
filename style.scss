@@ -402,6 +402,10 @@ footer
 }
 
 @media (max-width:600px) {
+    p 
+    {
+        text-align: center;
+    }
     .hero-section
     {
         @include column-center();
@@ -411,18 +415,26 @@ footer
         max-height: 500px;
         width: 90%;
         max-width: 400px;
-        min-width: 300px;
+        min-width: 280px;
         gap: 2rem;
     }
     .about-book
     {
         width:80%;
-        min-width: 300px;
+        min-width: 280px;
     }
     .available
     {
+        height: 200px;
+        width: 80%;
         .available-cta
         {
+            @include column-center();
+            label
+            {
+                max-width: 70%;
+                text-align: center;
+            }
             .cta-btn
             {
                 text-align: center;
@@ -431,12 +443,13 @@ footer
     }
     .about-author
     {
-        min-width: 300px;
+        min-width: 280px;
         gap: 1rem;
         .about-author-sect
         {
             width:100%;
             @include column-center();
+            gap: 1rem;
             flex-direction: column-reverse;
             div:first-child
             {
