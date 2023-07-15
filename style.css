@@ -97,7 +97,7 @@ h2 {
 
 .slide {
   position: relative;
-  animation: slideshow 25s linear infinite;
+  animation: slideshow 25s linear 5s infinite;
 }
 
 .images {
@@ -351,6 +351,9 @@ footer .links a {
   .about-book {
     width: 80%;
     min-width: 300px;
+  }
+  .available .available-cta .cta-btn {
+    text-align: center;
   }
   .about-author {
     min-width: 300px;
