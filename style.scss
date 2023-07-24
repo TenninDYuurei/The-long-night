@@ -43,7 +43,8 @@ header
     display: flex;
     align-items: center;
     justify-content: center;
-    background: $grey-color;
+    background: $grey-color-transparent;
+    backdrop-filter: blur(10px);
     max-height: 100px;
     img 
     {
